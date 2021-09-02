@@ -10,105 +10,58 @@ export default function BirdAnimation() {
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1 });
 
-    gsap.to("#base", {
-      fill: "#000",
-    });
+    gsap.to("#base", {});
 
     gsap.to("#container", {});
 
-    // tl.fromTo(
-    //   "#sun",
-    //   {
-    //     x: "-310%",
-    //     ease: SlowMo.ease.config(0.1, 0.3, false),
-    //     repeat: -1,
-    //     duration: 6,
-    //     delay: 2,
-    //   },
-    //   {
-    //     y: "30%",
-    //     x: "0",
-    //     ease: SlowMo.ease.config(0.1, 0.1, true),
-    //     repeat: -1,
-    //     duration: 6,
-    //     delay: 2,
-    //   },
-    //   "2"
-    // );
-    tl.to(
+    tl.from(
       "#sun",
-      { x: "-1100%", ease: SlowMo.ease.config(0.1, 0.3, false), duration: 1 },
+      { y: 200, ease: SlowMo.ease.config(0.1, 0.3, false), duration: 3 },
       "0"
-    ).to(
-      "#sun",
-      { y: -100, ease: SlowMo.ease.config(0.1, 0.1, true), duration: 1 },
-      "0"
-    );
+    )
+      .to(
+        "#sun",
+        { x: "-600%", ease: SlowMo.ease.config(0.1, 0.3, false), duration: 3 },
+        "0"
+      )
+      .to(
+        "#sun",
+        { y: 0, ease: SlowMo.ease.config(0.1, 0.1, true), duration: 3 },
+        "0"
+      );
     // gsap.to("#sun", { x: 100, duration: 1, ease: Power1.easeIn, delay: 1 });
 
-    gsap.to("#leaf", {
-      fill: "#f3f3",
-    });
+    gsap.to("#leaf", {});
 
-    gsap.to("#branch", {
-      fill: "#f3f",
-    });
+    gsap.to("#branch", {});
 
-    gsap.to("#flower", {
-      fill: "#000",
-    });
+    gsap.to("#flower", {});
 
-    gsap.to("#body", {
-      fill: "#f3f3f3f3",
-    });
+    gsap.to("#body", {});
 
-    gsap.to("#eyeLeft", {
-      fill: "#0003",
-    });
+    gsap.to("#eyeLeft", {});
 
-    gsap.to("#eyeRight", {
-      fill: "#00f",
-    });
+    gsap.to("#eyeRight", {});
 
-    gsap.to("#cheekLeft", {
-      fill: "#00f",
-    });
+    gsap.to("#cheekLeft", {});
 
-    gsap.to("#cheekRight", {
-      fill: "#0f2",
-    });
+    gsap.to("#cheekRight", {});
 
-    gsap.to("#nose", {
-      fill: "#000",
-    });
+    gsap.to("#nose", {});
 
-    gsap.to("#pawLeft", {
-      fill: "#200",
-    });
+    gsap.to("#pawLeft", {});
 
-    gsap.to("#pawRight", {
-      fill: "#020",
-    });
+    gsap.to("#pawRight", {});
 
-    gsap.to("#hair", {
-      fill: "#000",
-    });
+    gsap.to("#hair", {});
 
-    gsap.to("#headPhone", {
-      fill: "#000",
-    });
+    gsap.to("#headPhone", {});
 
-    gsap.to("#songGroupQuaterNote", {
-      fill: "#f3f",
-    });
+    gsap.to("#songGroupQuaterNote", {});
 
-    gsap.to("#quaterNote", {
-      fill: "#f32",
-    });
+    gsap.to("#quaterNote", {});
 
-    gsap.to("#fuse", {
-      fill: "#ff2",
-    });
+    gsap.to("#fuse", {});
   }, []);
   return (
     <Container>
