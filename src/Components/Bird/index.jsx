@@ -16,28 +16,98 @@ export default function BirdAnimation() {
 
     tl.from(
       "#sun",
-      { y: 200, ease: SlowMo.ease.config(0.1, 0.3, false), duration: 3 },
+      {
+        y: 200,
+        x: 200,
+        ease: SlowMo.ease.config(0.1, 0.3, false),
+        duration: 10,
+      },
       "0"
     )
       .to(
         "#sun",
-        { x: "-600%", ease: SlowMo.ease.config(0.1, 0.3, false), duration: 3 },
+        {
+          x: "-500%",
+          ease: SlowMo.ease.config(10, 20, false),
+          duration: 10,
+          stagger: true,
+          delay: 1.5,
+        },
         "0"
       )
       .to(
         "#sun",
-        { y: 0, ease: SlowMo.ease.config(0.1, 0.1, true), duration: 3 },
+        {
+          y: 0,
+          ease: SlowMo.ease.config(0.1, 0.1, true),
+          duration: 10,
+        },
         "0"
       );
-    // gsap.to("#sun", { x: 100, duration: 1, ease: Power1.easeIn, delay: 1 });
 
-    gsap.to("#leaf", {});
+    gsap.from("#leaf", {
+      repeat: -1,
+      yoyo: true,
+      ease: SlowMo.ease.config(0.6, 0.6, true),
+      scale: 0.8,
+      duration: 3,
+      rotate: 10,
+    });
 
-    gsap.to("#branch", {});
+    gsap.fromTo(
+      "#branch, #flower",
+      {
+        scale: 0.8,
+        y: 10,
+        filter: "brightness(1.2)",
+        ease: SlowMo.ease.config(0.6, 0.6, true),
+      },
+      {
+        filter: "brightness(1)",
+        y: 0,
+        scale: 1,
+        repeat: -1,
+        yoyo: true,
+        duration: 3,
+        ease: SlowMo.ease.config(0.6, 0.6, true),
+      }
+    );
 
-    gsap.to("#flower", {});
+    gsap.from("#hair", {
+      yoyo: true,
+      duration: 2,
+      repeat: -1,
+      rotate: 20,
+    });
 
-    gsap.to("#body", {});
+    gsap.to("#headPhone1", {
+      x: -106,
+      yoyo: true,
+      duration: 2,
+      repeat: -1,
+    });
+
+    gsap.from("#headPhone2", {
+      x: -15,
+      yoyo: true,
+      duration: 2,
+      repeat: -1,
+    });
+
+    gsap.from("#headPhone3", {
+      yoyo: true,
+      scale: 0.98,
+      duration: 2,
+      repeat: -1,
+    });
+
+    gsap.from("#body", {
+      x: -10,
+      y: 10,
+      yoyo: true,
+      duration: 2,
+      repeat: -1,
+    });
 
     gsap.to("#eyeLeft", {});
 
@@ -52,10 +122,6 @@ export default function BirdAnimation() {
     gsap.to("#pawLeft", {});
 
     gsap.to("#pawRight", {});
-
-    gsap.to("#hair", {});
-
-    gsap.to("#headPhone", {});
 
     gsap.to("#songGroupQuaterNote", {});
 
@@ -263,18 +329,18 @@ export default function BirdAnimation() {
           d="M393.47351,507.83307h0a48.89061,48.89061,0,0,1,48.89061,48.89061v24.44543a48.89061,48.89061,0,0,1-48.89061,48.89061h0a0,0,0,0,1,0,0V507.83307A0,0,0,0,1,393.47351,507.83307Z"
           transform="translate(679.72382 1074.30814) rotate(180)"
           fill="#6c63ff"
-          id="headPhone"
+          id="headPhone1"
         />
         <path
           d="M598.30346,444.24843h0A48.89061,48.89061,0,0,1,647.19412,493.139v24.44543a48.89061,48.89061,0,0,1-48.89061,48.89061h0a0,0,0,0,1,0,0V444.24843A0,0,0,0,1,598.30346,444.24843Z"
           fill="#6c63ff"
-          id="headPhone"
+          id="headPhone2"
         />
         <path
           d="M780.03662,560.56514H772.2795c0-98.37742-80.03569-178.41374-178.41374-178.41374-98.37742,0-178.41374,80.03632-178.41374,178.41374H407.6949c0-102.655,83.51592-186.17086,186.17086-186.17086C696.52134,374.39428,780.03662,457.91019,780.03662,560.56514Z"
           transform="translate(-156.11386 -63.58465)"
           fill="#6c63ff"
-          id="headPhone"
+          id="headPhone3"
         />
         <path
           d="M327.66117,411.058l.00139-.0029-3.64431-1.51771-15.37654-6.50027-5.51164-2.32988-.423,1.06789h0l-7.40381,18.694L316.14,429.28836l.1094.09906-1.40416,3.31082a5.86169,5.86169,0,0,0-.4899.95547c-.98358,2.48353.87418,4.95394,2.63035,5.6494s3.9773-.75381,4.96087-3.23734c.97022-2.44974.02206-5.5618-1.68937-6.31373l.00151-.0029-3.64431-1.51771-12.46676-4.84631,7.12325-17.98534-1.0558-.41806-7.12577,17.992-1.54154-.59929,7.15363-18.06223.18843.07978,14.6541,6.20232.10928.09906-1.404,3.31082a5.85137,5.85137,0,0,0-.48989.95547c-.98371,2.48353.87405,4.95394,2.63022,5.6494s3.9773-.75381,4.96087-3.23734C330.32064,414.922,329.37248,411.80993,327.66117,411.058Z"
