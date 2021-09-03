@@ -305,7 +305,7 @@ export default function BirdAnimation() {
       </svg>
 
       <Content>
-        <Href href="https://github.com/GuScarpim/Cat-Animation" target="_blank">
+        <Href href="https://github.com/GuScarpim/bird-animation" target="_blank">
           <AiFillGithub /> <Strong>Gustavo Scarpim</Strong>
         </Href>
       </Content>
