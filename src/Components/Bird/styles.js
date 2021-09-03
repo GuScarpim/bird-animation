@@ -28,6 +28,10 @@ export const ContentDescription = styled.h1`
     display: block;
     overflow: hidden;
   }
+
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `
 
 export const ContentDescriptionPT = styled.h2`
@@ -43,6 +47,11 @@ export const ContentDescriptionPT = styled.h2`
     margin: 0 2.5px;
     display: block;
     overflow: hidden;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: -10px;
+    font-size: 1.2rem;
   }
 `
 
