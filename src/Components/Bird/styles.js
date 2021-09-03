@@ -7,6 +7,11 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+
+  svg {
+    width: 100%;
+    max-width: 710px;
+  }
 `;
 
 export const ContentDescription = styled.h1`
@@ -42,8 +47,7 @@ export const ContentDescriptionPT = styled.h2`
 `
 
 export const Content = styled.div`
-  position: absolute;
-  bottom: 20px;
+  margin: 0 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +65,7 @@ export const Href = styled.a`
   svg {
     transform: scale(1.2);
     margin-right: 5px;
+    width: 20px;
   }
 
   &:hover {
