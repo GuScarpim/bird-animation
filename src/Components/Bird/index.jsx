@@ -1,136 +1,56 @@
 import { useEffect } from "react";
 
-import { gsap, SlowMo, Linear, Power1 } from "gsap/all";
+import BirdEffect from "../../Services/bird";
 
 import { AiFillGithub } from "react-icons/ai";
 
-import { Container, Content, Href, Strong } from "./styles";
+import {
+  Container,
+  Content,
+  Href,
+  Strong,
+  ContentDescription,
+  ContentDescriptionPT,
+} from "./styles";
+
+import AudioBemTeVi from "../../Assets/bemtevi.mp3";
+import TextEffect from "../../Services/text";
 
 export default function BirdAnimation() {
   useEffect(() => {
-    const tl = gsap.timeline({ repeat: -1 });
-
-    gsap.to("#base", {});
-
-    gsap.to("#container", {});
-
-    tl.from(
-      "#sun",
-      {
-        y: 200,
-        x: 200,
-        ease: SlowMo.ease.config(0.1, 0.3, false),
-        duration: 10,
-      },
-      "0"
-    )
-      .to(
-        "#sun",
-        {
-          x: "-500%",
-          ease: SlowMo.ease.config(10, 20, false),
-          duration: 10,
-          stagger: true,
-          delay: 1.5,
-        },
-        "0"
-      )
-      .to(
-        "#sun",
-        {
-          y: 0,
-          ease: SlowMo.ease.config(0.1, 0.1, true),
-          duration: 10,
-        },
-        "0"
-      );
-
-    gsap.from("#leaf", {
-      repeat: -1,
-      yoyo: true,
-      ease: SlowMo.ease.config(0.6, 0.6, true),
-      scale: 0.8,
-      duration: 3,
-      rotate: 10,
-    });
-
-    gsap.fromTo(
-      "#branch, #flower",
-      {
-        scale: 0.8,
-        y: 10,
-        filter: "brightness(1.2)",
-        ease: SlowMo.ease.config(0.6, 0.6, true),
-      },
-      {
-        filter: "brightness(1)",
-        y: 0,
-        scale: 1,
-        repeat: -1,
-        yoyo: true,
-        duration: 3,
-        ease: SlowMo.ease.config(0.6, 0.6, true),
-      }
-    );
-
-    gsap.from("#hair", {
-      yoyo: true,
-      duration: 2,
-      repeat: -1,
-      rotate: 20,
-    });
-
-    gsap.to("#headPhone1", {
-      x: -106,
-      yoyo: true,
-      duration: 2,
-      repeat: -1,
-    });
-
-    gsap.from("#headPhone2", {
-      x: -15,
-      yoyo: true,
-      duration: 2,
-      repeat: -1,
-    });
-
-    gsap.from("#headPhone3", {
-      yoyo: true,
-      scale: 0.98,
-      duration: 2,
-      repeat: -1,
-    });
-
-    gsap.from("#body", {
-      x: -10,
-      y: 10,
-      yoyo: true,
-      duration: 2,
-      repeat: -1,
-    });
-
-    gsap.to("#eyeLeft", {});
-
-    gsap.to("#eyeRight", {});
-
-    gsap.to("#cheekLeft", {});
-
-    gsap.to("#cheekRight", {});
-
-    gsap.to("#nose", {});
-
-    gsap.to("#pawLeft", {});
-
-    gsap.to("#pawRight", {});
-
-    gsap.to("#songGroupQuaterNote", {});
-
-    gsap.to("#quaterNote", {});
-
-    gsap.to("#fuse", {});
+    BirdEffect();
+    TextEffect();
   }, []);
   return (
     <Container>
+      <ContentDescription>
+        <span>
+          <span>Click</span>
+        </span>
+        <span>
+          <span>On</span>
+        </span>
+        <span>
+          <span>Bird</span>
+        </span>
+      </ContentDescription>
+
+      <ContentDescriptionPT>
+        <label>
+          <label>(Clica</label>
+        </label>
+        <label>
+          <label>no</label>
+        </label>
+        <label>
+          <label>passarinho)</label>
+        </label>
+      </ContentDescriptionPT>
+      <audio autoPlay id="player">
+        <source src={AudioBemTeVi} type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+
       <svg
         data-name="Layer 1"
         id="container"
@@ -265,16 +185,20 @@ export default function BirdAnimation() {
           r="166.22823"
           fill="#3f3d56"
           id="body"
+          cursor="pointer"
+          onClick={() => document.getElementById("player").play()}
         />
         <path
           d="M493.73979,580.41025a43.98767,43.98767,0,0,1,67.51907,0,48.89067,48.89067,0,1,0-67.51907,0Z"
           transform="translate(-156.11386 -63.58465)"
           fill="#fff"
+          id="eye"
         />
         <path
           d="M625.74457,580.41025a43.98759,43.98759,0,0,1,67.519,0,48.89064,48.89064,0,1,0-67.519,0Z"
           transform="translate(-156.11386 -63.58465)"
           fill="#fff"
+          id="eye"
         />
         <circle
           cx="354.70738"

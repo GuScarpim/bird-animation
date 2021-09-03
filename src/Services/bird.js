@@ -1,206 +1,198 @@
 import { gsap, SlowMo } from "gsap/all";
 
-export default function CatEffect() {
-  const tl = gsap.timeline();
+export default function BirdEffect() {
+  const tl = gsap.timeline({ repeat: -1 });
+  const tlNote = gsap.timeline({ repeat: -1 });
 
-  // Lines
-  tl.from("#firstLine, #secondLine", {
-    duration: 1,
-    scale: 0,
-  })
-    .from("#branchFirstFlower, #branchSecondFlower", {
-      duration: 0.5,
-      opacity: 0,
-    })
-    .from("#firstFlower, #secondFlower", {
-      // Flowers
-      duration: 0.5,
-      opacity: 0,
-    })
-    .from("#branchThirdFlower, #branchFourthFlower", {
-      // Flowers
-      duration: 0.5,
-      opacity: 0,
-    })
-    .from("#thirdFlower, #fourthFlower", {
-      // Flowers
-      duration: 0.5,
-      opacity: 0,
-    })
-    .from("#branchQuintFlower, #branchSixFlower", {
-      // Flowers
-      duration: 0.5,
-      opacity: 0,
-    })
-    .from("#quintFlower, #sixFlower", {
-      // Flowers
-      duration: 0.5,
-      opacity: 0,
-    })
+  tl.from(
+    "#sun",
+    {
+      y: 200,
+      x: 200,
+      ease: SlowMo.ease.config(0.1, 0.3, false),
+      duration: 10,
+    },
+    "0"
+  )
+    .to(
+      "#sun",
+      {
+        x: "-500%",
+        ease: SlowMo.ease.config(10, 20, false),
+        duration: 10,
+        stagger: true,
+        delay: 1.5,
+      },
+      "0"
+    )
+    .to(
+      "#sun",
+      {
+        y: 0,
+        ease: SlowMo.ease.config(0.1, 0.1, true),
+        duration: 10,
+      },
+      "0"
+    );
 
-  gsap.fromTo(
-    "#branchFirstFlower, #branchThirdFlower",
-    {
-      rotate: 0,
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      duration: 3,
-    },
-    {
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      rotate: -1.4,
-      repeat: -1,
-      yoyo: true,
-      duration: 3,
-    },
-    1
-  );
-
-  gsap.fromTo(
-    "#branchSecondFlower, #branchFourthFlower",
-    {
-      rotate: 0,
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      duration: 3,
-    },
-    {
-      rotate: -4,
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      repeat: -1,
-      yoyo: true,
-      duration: 3,
-    },
-    1
-  );
-
-  gsap.fromTo(
-    "#firstFlower, #thirdFlower",
-    {
-      rotate: 0,
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      duration: 3,
-    },
-    {
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      rotate: -2,
-      repeat: -1,
-      yoyo: true,
-      duration: 3,
-    },
-    1
-  );
-
-  gsap.fromTo(
-    "#secondFlower, #fourthFlower",
-    {
-      rotate: .6,
-      duration: 3,
-    },
-    {
-      rotate: -5,
-      repeat: -1,
-      yoyo: true,
-      duration: 3,
-    },
-    1
-  );
-
-  gsap.fromTo(
-    "#branchQuintFlower, #branchSixFlower",
-    {
-      rotate: 0,
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      duration: 3,
-      y: -318,
-      x: -205,
-    },
-    {
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      y: -320,
-      x: -208,
-      rotate: 2,
-      repeat: -1,
-      yoyo: true,
-      duration: 3,
-    },
-    1
-  );
-
-  gsap.fromTo(
-    "#quintFlower, #sixFlower",
-    {
-      rotate: 0,
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      duration: 3,
-    },
-    {
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      rotate: 3,
-      repeat: -1,
-      yoyo: true,
-      duration: 3,
-    },
-    1
-  );
-
-
-  // Cat
-  gsap.from("#headCat, #bodyCat, #armCat, #catPaw, #nosePaw, #tailCat, #eyeRightCat, #eyeLeftCat, #cheekRightCat, #cheekLeftCat", {
-    duration: 3,
-    opacity: 0,
+  gsap.from("#leaf", {
+    repeat: -1,
+    yoyo: true,
+    ease: SlowMo.ease.config(0.6, 0.6, true),
+    scale: 0.8,
+    duration: 2,
+    rotate: 10,
   });
 
   gsap.fromTo(
-    "#tailCat",
+    "#branch, #flower",
     {
-      y: "-320px",
-      rotate: 0,
-      x: "-210px",
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      duration: 1,
+      scale: 0.8,
+      y: 10,
+      filter: "brightness(1.2)",
+      ease: SlowMo.ease.config(0.6, 0.6, true),
     },
     {
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      y: "-320px",
-      rotate: -12,
-      x: "-218px",
+      filter: "brightness(1)",
+      y: 0,
+      scale: 1,
       repeat: -1,
       yoyo: true,
-      duration: 1,
-    },
-    1
+      duration: 2,
+      ease: SlowMo.ease.config(0.6, 0.6, true),
+    }
   );
 
-  gsap.fromTo(
-    "#eyeRightCat, #eyeLeftCat",
-    {
-      x: "0px",
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      duration: 3,
-    },
-    {
-      duration: 3,
-      ease: SlowMo.ease.config(0.2, 0.2, false),
-      x: "20px",
-      repeat: -1,
-      yoyo: true,
-    },
-    3
-  );
+  gsap.from("#hair", {
+    yoyo: true,
+    duration: 2,
+    repeat: -1,
+    rotate: 20,
+  });
+
+  gsap.from("#headPhone1", {
+    x: -110,
+    yoyo: true,
+    duration: 2,
+    repeat: -1,
+  });
+
+  gsap.from("#headPhone2", {
+    x: -15,
+    yoyo: true,
+    duration: 2,
+    repeat: -1,
+  });
+
+  gsap.from("#headPhone3", {
+    yoyo: true,
+    scale: 0.95,
+    duration: 2,
+    repeat: -1,
+  });
+
+  gsap.from("#body", {
+    x: -10,
+    y: 10,
+    yoyo: true,
+    duration: 2,
+    repeat: -1,
+  });
 
   gsap.fromTo(
-    "#cheekRightCat, #cheekLeftCat",
-    3,
+    "#eye",
     {
-      dutation: 3,
-      fill: "#63deff",
+      scaleY: 1,
+      paused: false,
+      x: -180,
     },
     {
-      dutation: 3,
-      fill: "#ff6584",
-      repeat: -1,
+      x: -170,
+      scaleY: 0.95,
+      transformOrigin: "50% 50%",
+      duration: 2,
       yoyo: true,
-    },
-    3
+      repeat: -1,
+    }
   );
+
+  gsap.from("#eyeLeft, #eyeRight", {
+    x: -20,
+    y: 10,
+    duration: 2,
+    yoyo: true,
+    repeat: -1,
+  });
+
+  gsap.from("#cheekLeft, #cheekRight", {
+    yoyo: true,
+    x: -10,
+    scale: 0.9,
+    fill: "#6C63FF",
+    duration: 2,
+    repeat: -1,
+  });
+
+  gsap.from("#nose", {
+    yoyo: true,
+    x: -10,
+    rotate: 10,
+    scale: 0.9,
+    fill: "#6C63FF",
+    duration: 2,
+    repeat: -1,
+  });
+
+  gsap.from("#pawLeft", {
+    yoyo: true,
+    x: -10,
+    rotate: -5,
+    duration: 2,
+    repeat: -1,
+  });
+
+  gsap.from("#pawRight", {
+    yoyo: true,
+    y: -3,
+    x: -8,
+    rotate: -5,
+    duration: 2,
+    repeat: -1,
+  });
+
+  tlNote
+    .fromTo(
+      "#fuse",
+      {
+        opacity: 0,
+      },
+      {
+        stagger: 1,
+        opacity: 1,
+        yoyo: true,
+      }
+    )
+    .fromTo(
+      "#songGroupQuaterNote",
+      {
+        opacity: 0,
+      },
+      {
+        stagger: 1,
+        opacity: 1,
+        duration: 1,
+      }
+    )
+    .fromTo(
+      "#quaterNote",
+      {
+        opacity: 0,
+      },
+      {
+        stagger: 1,
+        opacity: 1,
+        duration: 1,
+      }
+    );
 }
 
