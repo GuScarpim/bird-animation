@@ -12,7 +12,7 @@ export const Container = styled.div`
     width: 100%;
     max-width: 710px;
   }
-`;
+`
 
 export const ContentDescription = styled.h1`
   display: flex;

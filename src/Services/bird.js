@@ -1,8 +1,8 @@
-import { gsap, SlowMo } from "gsap/all";
+import { gsap, SlowMo } from "gsap/all"
 
 export default function BirdEffect() {
-  const tl = gsap.timeline({ repeat: -1 });
-  const tlNote = gsap.timeline({ repeat: -1 });
+  const tl = gsap.timeline({ repeat: -1 })
+  const tlNote = gsap.timeline({ repeat: -1 })
 
   tl.from(
     "#sun",
@@ -33,7 +33,7 @@ export default function BirdEffect() {
         duration: 10,
       },
       "0"
-    );
+    )
 
   gsap.from("#leaf", {
     repeat: -1,
@@ -42,7 +42,7 @@ export default function BirdEffect() {
     scale: 0.8,
     duration: 2,
     rotate: 10,
-  });
+  })
 
   gsap.fromTo(
     "#branch, #flower",
@@ -61,35 +61,35 @@ export default function BirdEffect() {
       duration: 2,
       ease: SlowMo.ease.config(0.6, 0.6, true),
     }
-  );
+  )
 
   gsap.from("#hair", {
     yoyo: true,
     duration: 2,
     repeat: -1,
     rotate: 20,
-  });
+  })
 
   gsap.from("#headPhone1", {
     x: -110,
     yoyo: true,
     duration: 2,
     repeat: -1,
-  });
+  })
 
   gsap.from("#headPhone2", {
     x: -15,
     yoyo: true,
     duration: 2,
     repeat: -1,
-  });
+  })
 
   gsap.from("#headPhone3", {
     yoyo: true,
     scale: 0.95,
     duration: 2,
     repeat: -1,
-  });
+  })
 
   gsap.from("#body", {
     x: -10,
@@ -97,7 +97,7 @@ export default function BirdEffect() {
     yoyo: true,
     duration: 2,
     repeat: -1,
-  });
+  })
 
   gsap.fromTo(
     "#eye",
@@ -114,7 +114,7 @@ export default function BirdEffect() {
       yoyo: true,
       repeat: -1,
     }
-  );
+  )
 
   gsap.from("#eyeLeft, #eyeRight", {
     x: -20,
@@ -122,7 +122,7 @@ export default function BirdEffect() {
     duration: 2,
     yoyo: true,
     repeat: -1,
-  });
+  })
 
   gsap.from("#cheekLeft, #cheekRight", {
     yoyo: true,
@@ -131,7 +131,7 @@ export default function BirdEffect() {
     fill: "#6C63FF",
     duration: 2,
     repeat: -1,
-  });
+  })
 
   gsap.from("#nose", {
     yoyo: true,
@@ -141,7 +141,7 @@ export default function BirdEffect() {
     fill: "#6C63FF",
     duration: 2,
     repeat: -1,
-  });
+  })
 
   gsap.from("#pawLeft", {
     yoyo: true,
@@ -149,7 +149,7 @@ export default function BirdEffect() {
     rotate: -5,
     duration: 2,
     repeat: -1,
-  });
+  })
 
   gsap.from("#pawRight", {
     yoyo: true,
@@ -158,7 +158,7 @@ export default function BirdEffect() {
     rotate: -5,
     duration: 2,
     repeat: -1,
-  });
+  })
 
   tlNote
     .fromTo(
@@ -193,6 +193,6 @@ export default function BirdEffect() {
         opacity: 1,
         duration: 1,
       }
-    );
+    )
 }
 
