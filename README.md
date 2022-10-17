@@ -1,6 +1,6 @@
 # Bem-te-vi Animation - GSAP
 
-Criando uma animação com SVG.
+Criando uma animação com SVG e GSAP.
 # <a href="https://bem-te-vi.netlify.app/" target="_blank">Deploy</a>
 
 ## Ferramentas utilizadas
