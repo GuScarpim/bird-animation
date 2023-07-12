@@ -30,6 +30,9 @@ export default function BirdAnimation() {
         <span>
           <span>On</span>
         </span>
+         <span>
+          <span>The</span>
+        </span>
         <span>
           <span>Bird</span>
         </span>
@@ -46,7 +49,7 @@ export default function BirdAnimation() {
           <label>passarinho)</label>
         </label>
       </ContentDescriptionPT>
-      <audio autoPlay id='player'>
+      <audio id='player'>
         <source src={AudioBemTeVi} type='audio/mp3' />
         Your browser does not support the audio element.
       </audio>
